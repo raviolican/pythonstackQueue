@@ -4,37 +4,45 @@ Created on Wed Dec  7 17:53:51 2016
 Einfach Verkettete Liste
 """
 
-class Node:
-    def __init__(self, d):
-        self.data = d       #d ist erstes Element(Kopf der Liste)
-        self.next = None    #nächstes Element None
-
-def prepend(data, list):    
-    node = Node(data)       # neues Element am Anfang der Liste
-    node.next = list        # altes Element an 2ter Stelle
-    return node
-
-def append(data, list):     # Neues Element am Ende der Liste
-    node = Node(data)
-    if list is None:        
-        node.next = None    
-        return node
-    i = list
-    while i.next is not None:
-        i = i.next          #i = counter, wenn mit List gearbeitet wird, geht Kopf der Liste verloren
-    i.next = node
-    node.next = None
-    return list
-
-def delete(data, list):     #löscht ein Element aus Liste
-    if list is None:        #nix zum löschen
-        return None         
-    if list.data is data:   #wenn erstes Element = data ist, Kopf der Liste um 1 weiter"
-        return list.next
+class DataObj(object):
+    def __init__(self, value):
+        self.value = value
+        self.next = None
     
-    i = list
-    while i.next is not None and i.next.data is not data:   #sucht den zu löschenden Wert
-        i = i.next
-    if i.next is not None:
-        i.next = i.next.next        #zeigt auf "übernächsten wert", da "nächste" Wert der neue Wert ist.
-    return list
+class LinkedList(object):
+    def __init__(self,value):
+        self.pointer = DataObj(value)
+        
+    def pre(self,value):
+        """ Prepend
+        """
+        newObject = DataObj(value)
+        newObject.next = self.pointer
+        self.pointer = newObject
+        
+    def add(self,value):
+        """ Append
+        """
+        newObject = DataObj(value)
+        t = self.pointer
+        while t.next is not None:
+            t = t.next
+        t.next = newObject 
+        
+    def rm(self, value):
+        """ Delete
+        """
+        t = self.pointer
+        if self.pointer.value is value:
+            self.pointer = self.pointer.next
+        while (t.next is not None) and (t.next.value is not value):
+            t = t.next
+        if t.next is not None:
+            t.next = t.next.next
+       
+#   OPTIONAL
+#    def va(self):
+#        """ Get
+#        """
+#        return self.pointer.value
+#        
