@@ -15,6 +15,7 @@ eingefügt werden.
 Der Queue ist voll, wenn das letzte Element belegt ist.
 @author: frye
 """
+from node import LinkedList
 
 class Queue(object):
     def __init__(self, n):

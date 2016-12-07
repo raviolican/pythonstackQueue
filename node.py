@@ -11,6 +11,7 @@ class DataObj(object):
     
 class LinkedList(object):
     def __init__(self,value):
+        # " Zeiger " auf den ersten Listeneintrag
         self.pointer = DataObj(value)
         
     def pre(self,value):
