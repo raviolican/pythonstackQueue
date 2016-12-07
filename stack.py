@@ -27,7 +27,6 @@ class Stack(object):
         """
         # Check if HEAD is type None - empty
         return self.stack.pointer.value is None 
-
     def push(self, element):
         """ Push values on the stack
         """
@@ -37,19 +36,19 @@ class Stack(object):
             self.stack.pre(element)
             self.sp = self.sp + 1
     def pop(self):
-        """ Poppen
+        """ Remove top value
         """
-        if self.isEmpty:
+        if self.isEmpty():
             return None
         else:
             self.stack.rm(self.stack.pointer.value)
             self.sp = self.sp - 1
     def top(self):
-        """ Top Value
+        """ Read top value
         """
         return self.stack.pointer.value
     def popTop(self):
-        """ Poppen and top value
+        """ Read and remove top value
         """
         tVar = self.top()
         self.pop()
@@ -57,7 +56,7 @@ class Stack(object):
 
 
 
-
+ 
 
 
 # ==================== old OLD old ============================================

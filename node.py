@@ -40,9 +40,10 @@ class LinkedList(object):
             t = t.next
         if t.next is not None:
             t.next = t.next.next
+            # t.next = t.next.next
        
 #   OPTIONAL
-#    def va(self):
+#    def get(self):
 #        """ Get
 #        """
 #        return self.pointer.value

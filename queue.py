@@ -23,11 +23,12 @@ class Queue(object):
         self.end    = 0
         self.maximum = n
         self.voll    = False
-        self.queue   = [None]*n
+        self.queue   = LinkedList(None)
     def isEmpty(self):
         """ Returns if queue is empty
         """
-        return self.start == (self.end and not self.voll)
+        #return self.start == (self.end and not self.voll)
+        return self.queue.pointer.value is None
         
     def isFull(self):
         return self.voll
@@ -36,7 +37,8 @@ class Queue(object):
         if(self.isFull()):
             return "Queue is Full"
         else:
-            self.queue[self.end] = element
+            self.queue.pre(element)
+            #oldself.queue[self.end] = element
             # Wenn end == max wird end 0 ansonsten wird es die Zahl
             self.end = (self.end + 1) % self.maximum
             if(self.start == self.end):
@@ -50,7 +52,9 @@ class Queue(object):
             return None
         else:
             self.voll = False
-            iVar = self.queue[self.start]
+            iVar = self.queue.pointer.value
+            self.queue.rm(iVar)
+            #iVar = self.queue[self.start]
             self.start = (self.start + 1) % self.maximum
             return iVar
             
@@ -60,17 +64,16 @@ class Queue(object):
         if(self.isEmpty()):
             return None
         else:
-            return self.queue[self.start]
+            return self.queue.pointer.value
             
-myQueue = Queue(10)
-myQueue.enqueue("10101")
-sVar = myQueue.get()
-print(sVar)
+            
+            
+myQueue = Queue(10) # Stack fuer 10 Elemente anlegen
 
-for i in range(10):
+for i in range(12):
     myQueue.enqueue(i)
-for i in range(10):
-    print(str(i)+" ---> " + str(myQueue.get()))
+for i in range(12):
+    print(str(i)+" ---> " + str(myQueue.dequeue()))
 
 
 

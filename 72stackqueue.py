@@ -24,7 +24,6 @@ class StackQueue(object):
         """ Take an element from the outhbox
         """
         tVar = self.outbox.popTop()
-        
         # If outbox is empty, none will be retur
         if(tVar == None):
             # Load all objects from inbox into the outbox
@@ -38,9 +37,11 @@ class StackQueue(object):
         return tVar
     
     
+### TESTS ###
+
 
 # Neues Objekt anlegen
-myQueue = StackQueue(10)
+myQueue = StackQueue(20)
 
 # Queue bietet für 10 Daten platz
 for i in range(10):
