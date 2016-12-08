@@ -120,18 +120,18 @@ class Stack(object):
 #        self.pop()
 #        return tVar
         
-
-myStack = Stack(100)
-myStack.push(10)
-print(myStack.top())
-iVar = myStack.popTop()
-print(iVar)
-iVar = myStack.popTop()
-print(iVar)
-
-
-
-
+#
+#myStack = Stack(100)
+#myStack.push(10)
+#print(myStack.top())
+#iVar = myStack.popTop()
+#print(iVar)
+#iVar = myStack.popTop()
+#print(iVar)
+#
+#
+#
+#
 
 
 

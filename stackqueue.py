@@ -36,54 +36,71 @@ class StackQueue(object):
                     self.outbox.push(tVar)
         return tVar
     
-    
-### TESTS ###
-
-
-# Neues Objekt anlegen
-myQueue = StackQueue(20)
-
-# Queue bietet für 10 Daten platz
-for i in range(10):
-    myQueue.enqueue(i*i)
 
 
 
-# genau 10 mal daten aus dem Stack entfernen
-tVar = myQueue.dequeue()
-print(tVar)
-tVar = myQueue.dequeue()
-print(tVar)
-tVar = myQueue.dequeue()
-print(tVar)
-tVar = myQueue.dequeue()
-print(tVar)
-tVar = myQueue.dequeue()
-print(tVar)
-tVar = myQueue.dequeue()
-print(tVar)
-tVar = myQueue.dequeue()
-print(tVar)
-tVar = myQueue.dequeue()
-print(tVar)
-tVar = myQueue.dequeue()
-print(tVar)
-tVar = myQueue.dequeue()
-print(tVar)
 
-# Das sollte nichtmehr funktionieren
-tVar = myQueue.dequeue()
-print(tVar) # Ausgabe: none
-
-
-# Überfuellen - Der queue sollte alles ab 10 ignorierein
-for i in range(20):
-    myQueue.enqueue(i*i/2)
-
-for i in range(11):
-    print(myQueue.dequeue())
+# Complexität:
+# Enqueue O(1) Weil nur eine Funktion aufgerufen wird
+# Dequeue Maximal O(N)| n = anzahl der Elemente in der inbox
 
 
 
 
 
+
+
+
+
+
+#
+#### TESTS ###
+#
+#
+## Neues Objekt anlegen
+#myQueue = StackQueue(20)
+#
+## Queue bietet für 10 Daten platz
+#for i in range(10):
+#    myQueue.enqueue(i*i)
+#
+#
+#
+## genau 10 mal daten aus dem Stack entfernen
+#tVar = myQueue.dequeue()
+#print(tVar)
+#tVar = myQueue.dequeue()
+#print(tVar)
+#tVar = myQueue.dequeue()
+#print(tVar)
+#tVar = myQueue.dequeue()
+#print(tVar)
+#tVar = myQueue.dequeue()
+#print(tVar)
+#tVar = myQueue.dequeue()
+#print(tVar)
+#tVar = myQueue.dequeue()
+#print(tVar)
+#tVar = myQueue.dequeue()
+#print(tVar)
+#tVar = myQueue.dequeue()
+#print(tVar)
+#tVar = myQueue.dequeue()
+#print(tVar)
+#
+## Das sollte nichtmehr funktionieren
+#tVar = myQueue.dequeue()
+#print(tVar) # Ausgabe: none
+#
+#
+## Überfuellen - Der queue sollte alles ab 10 ignorierein
+#for i in range(20):
+#    myQueue.enqueue(i*i/2)
+#
+#for i in range(11):
+#    print(myQueue.dequeue())
+#
+#
+#
+#
+#
